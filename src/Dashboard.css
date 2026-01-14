@@ -1,0 +1,227 @@
+/* Dashboard.css */
+
+/* Import a futuristic monospace font from Google */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg-dark: #0a0a12;
+    --card-dark: #161623a8; /* Slightly transparent */
+    --neon-cyan: #00f7ff;
+    --neon-green: #39ff14;
+    --neon-orange: #ff8c00;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    /* Subtle futuristic background gradient */
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a12 100%);
+    color: var(--text-primary);
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+/* The main data card */
+.data-card {
+    display: inline-block;
+    text-align: left;
+    background-color: var(--card-dark);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid rgba(0, 247, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.1), inset 0 0 20px rgba(0, 247, 255, 0.05);
+    padding: 40px;
+    border-radius: 16px;
+    min-width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* A subtle scanning line effect */
+.data-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    animation: scanline 6s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes scanline {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+.status-indicator {
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+/* Status light dots */
+.status-dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.status-online {
+    color: var(--neon-green);
+}
+
+.status-offline {
+    color: var(--neon-orange);
+}
+
+.data-row {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.data-icon {
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px var(--neon-cyan));
+}
+
+.data-label {
+    color: var(--neon-cyan);
+    margin-right: auto;
+}
+
+.data-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.last-updated {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+.refresh-btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.refresh-btn:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.7);
+}
+
+.error-msg {
+    color: var(--neon-orange);
+    border: 1px solid var(--neon-orange);
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    background: rgba(255, 140, 0, 0.1);
+}
+
+.device-name {
+    font-size: 1.4em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.table-container {
+    /* ... existing styles ... */
+    min-height: 200px; /* Forces height so headers don't look weird */
+}
+
+.history-table {
+    width: 100%; /* Ensures it fills the width */
+    table-layout: fixed; /* Forces equal spacing for columns */
+}
+/* --- POWER BI SECTION --- */
+
+.report-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    max-width: 1200px; /* Power BI reports are wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    color: var(--neon-cyan);
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.3);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.powerbi-container {
+    text-align: center;
+}
+
+.iframe-wrapper {
+    background-color: var(--card-dark);
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px; /* Creates a frame */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 247, 255, 0.05);
+    overflow: hidden;
+}
+
+/* Make iframe responsive */
+.iframe-wrapper iframe {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    /* Optional: Invert colors if your Power BI report is white and you want it dark 
+       filter: invert(1) hue-rotate(180deg); 
+       (Only use this if you didn't style the Power BI report itself to be dark)
+    */
+}
