@@ -1,6 +1,6 @@
 # IoT Digital Twin Dashboard & Weather Enrichment Pipeline
 
-A full-stack IoT solution that creates a "Digital Twin" of a home environment. This project ingests real-time telemetry from an MXChip sensor, enriches it with live external weather data via Azure Functions, and visualizes the correlation in a 3D Viewer using Autodesk Platform Services (APS).
+A full-stack IoT solution that creates a Digital Twin of a home environment. This project ingests real-time telemetry from an MXChip sensor, enriches it with live external weather data via Azure Functions, and visualizes the correlation in a 3D Viewer using Autodesk Platform Services (APS) APIs.
 
 ![Project Screenshot](https://www.iamadamnelson.com/images/project-2.JPG) 
 
