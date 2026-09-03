@@ -7,7 +7,7 @@ import './Dashboard.css';
 const TOKEN_API_URL = "https://iot-telemetry-fxaua0f8ehfvh0ae.eastus-01.azurewebsites.net/api/aps-token";
 const TELEMETRY_API_URL = "https://iot-telemetry-fxaua0f8ehfvh0ae.eastus-01.azurewebsites.net/api/iot-telemetry";
 
-const DEVICE_NAME = "MXCHIP-NELSON"; 
+const DEVICE_NAME = "AZ3166"; 
 const MODEL_URN = "dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6MjAyMzAxMjkvSG91c2UucnZ0";  
 // ---------------------
 
